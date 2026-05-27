@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    margin: 0;
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    color: #172026;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply rounded-lg border border-slate-200 bg-white shadow-sm;
+  }
+
+  .section-heading {
+    @apply flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between;
+  }
+
+  .section-heading h1 {
+    @apply text-2xl font-semibold text-ink md:text-3xl;
+  }
+
+  .section-heading p {
+    @apply mt-2 max-w-3xl text-sm leading-6 text-slate-600;
+  }
+
+  .nav-item {
+    @apply flex w-full items-center gap-3 rounded-md px-3 py-2.5 text-left text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-ink;
+  }
+
+  .nav-item.active {
+    @apply bg-teal-50 text-clinical;
+  }
+
+  .primary-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-clinical px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-teal-800 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .secondary-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50;
+  }
+
+  .input {
+    @apply w-full rounded-md border border-slate-300 bg-white px-3 py-2.5 text-sm text-ink outline-none transition focus:border-clinical focus:ring-2 focus:ring-teal-100;
+  }
+
+  .label {
+    @apply text-xs font-semibold uppercase tracking-wide text-slate-500;
+  }
+
+  .segmented {
+    @apply inline-flex rounded-md border border-slate-200 bg-white p-1;
+  }
+
+  .segmented button {
+    @apply rounded px-3 py-2 text-sm font-semibold text-slate-600;
+  }
+
+  .segmented button.selected {
+    @apply bg-clinical text-white;
+  }
+}
